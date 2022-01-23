@@ -19,13 +19,13 @@ int minRefills(std::vector<int> x,int n,int L){
     int currentRefill=0; //Nuestra posicion
     int numRefills=0;
 
-    while(currentRefill < n){ //en este momento habriamos pasado por todas las estaciones
+    while(currentRefill <= n){ //en este momento habriamos pasado por todas las estaciones
 
         //Reducir a subproblema
         int lastRefill = currentRefill;
 
         //Make the next movement. Demostrate that is Safe
-        while(currentRefill <=n && (x[currentRefill+1]-x[lastRefill]) <=L){
+        while(currentRefill <=n && (x[currentRefill+1]-x[lastRefill]) <= L){
             currentRefill++;
         }
         if (currentRefill==lastRefill) return -1;
