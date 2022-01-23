@@ -32,3 +32,5 @@
 *.app
 #Vs code
 .vscode/
+#Problems
+Problemas_DS_ALGO/*
