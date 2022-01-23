@@ -29,13 +29,13 @@ Resultado Knapsack(int W,std::vector<double> &v,std::vector<double>& w){
                 }
         }
         //End selection
-        int a=0;
+        double a=0;
         //a = min(w[item],W)
         a = w[item] < W ? w[item] : W;
 
-        V = V + a * v[item]/w[item];
-        w[item]-=a;
-        A[item]+=a;
+        V += a * v[item]/w[item];
+        w[item] -= a;
+        A[item] += a;
         W -= a;
     }
     res.A = A;
