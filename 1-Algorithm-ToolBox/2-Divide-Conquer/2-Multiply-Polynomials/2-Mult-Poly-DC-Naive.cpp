@@ -56,8 +56,8 @@ std::vector<int> MultPolynomialDivideConquerNaive(std::vector<int> &A,std::vecto
 void printPolynomial(std::vector<int> &res);
 int main(){
 
-    std::vector<int> A{1,1,1,1}; 
-    std::vector<int> B{1,2,1,1}; 
+    std::vector<int> A{4,3,2,1}; 
+    std::vector<int> B{1,2,3,4};
 
     //res= x^2 +3x+2  
     int n = A.size();

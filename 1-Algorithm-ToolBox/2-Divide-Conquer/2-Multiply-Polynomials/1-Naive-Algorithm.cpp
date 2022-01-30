@@ -24,23 +24,24 @@ std::vector<int> MultiplyPolynomial(std::vector<int> &A,std::vector<int> & B,int
 void printPolynomial(std::vector<int> &res);
 int main(){
 
-    std::vector<int> A{1,1,1}; //x+1
-    std::vector<int> B{1,2,1}; //x+2
+    std::vector<int> A{1,1,1,1}; 
+    std::vector<int> B{1,2,1,1}; 
 
     //res= x^2 +3x+2  
     int n = A.size();
 
     std::vector<int> res = MultiplyPolynomial(A,B,n);
 
+
+    printPolynomial(res);
+}
+
+void printPolynomial(std::vector<int> &res){
     std::cout << "{ ";
     for(auto &i : res){
         std::cout << i << ' ';
     }
     std::cout << "}\n"; 
-    printPolynomial(res);
-}
-
-void printPolynomial(std::vector<int> &res){
     int n = res.size();
     int grado_max = n-1;
 
