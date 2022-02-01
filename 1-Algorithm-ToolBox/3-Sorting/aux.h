@@ -2,9 +2,17 @@
 #include <iostream>
 #include <algorithm>
 #include <ctime>
-
+#include <array>
 
 void printVector(std::vector<int> &v){
+    std::cout << "{";
+    for (auto &i : v){
+        std::cout << i << " ";
+    }
+    std::cout << "}\n";
+}
+template<std::size_t S>
+void printArray(std::array<int,S> &v){
     std::cout << "{";
     for (auto &i : v){
         std::cout << i << " ";
