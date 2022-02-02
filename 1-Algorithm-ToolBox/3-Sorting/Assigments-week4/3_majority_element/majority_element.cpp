@@ -4,14 +4,14 @@
 
 using std::vector;
 
-int get_majority_element(vector<int> &a, int left, int right) {
+int get_majority_element2(vector<int> &a, int left, int right) {
   //right is a.size, so the max value is righ-1
   if (left == right) return -1;
   if (left + 1 == right) return a[left];
   //write your code here
   int mid = left+(right-left)/2;
-  int x = get_majority_element(a,left,mid);
-  int y = get_majority_element(a,mid,right);
+  int x = get_majority_element2(a,left,mid);
+  int y = get_majority_element2(a,mid,right);
   if(x==y){
     return x;
   } else if(x!=-1 && y!=-1) {
@@ -31,6 +31,31 @@ int get_majority_element(vector<int> &a, int left, int right) {
   } 
   return -1;
 }
+
+int get_majority_element(vector<int> &a, int left, int right) {
+  //right is a.size, so the max value is righ-1
+  if (left == right) return -1;
+  if (left + 1 == right) return a[left];
+  //write your code here
+  std::sort(a.begin(),a.end());
+  int count=1;
+  int initialValue=a[0];
+  for (int i=1;i<a.size();++i){
+    if(a[i]==initialValue){
+      count++;
+    }
+    if (count > a.size()/2){
+      return a[i];
+    }
+    if (a[i]!=initialValue){
+      count=0;
+      initialValue=a[i];
+    }
+  }
+  return -1;
+}
+
+
 
 int main() {
   int n;
